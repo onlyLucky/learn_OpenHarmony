@@ -1,5 +1,9 @@
 import prompt from '@ohos.promptAction';
 import router from '@ohos.router';
+import { FileManager } from "@ohos/feature-file-manager"
+import environment from '@ohos.file.environment';
+import { BusinessError } from '@ohos.base';
+import fs from '@ohos.file.fs';
 
 class MainListItemModel {
   image: Resource | null = null
@@ -8,6 +12,8 @@ class MainListItemModel {
   isReady?: boolean = true
   isFileWatcher?: boolean = false
 }
+
+const ONE_SECOND: number = 1000
 
 const MAIN_LIST_ITEMS: MainListItemModel[] = [
   {
@@ -57,6 +63,24 @@ struct MainListItemComponent{
     .backgroundColor($r('app.color.item_pressed'))
   }
 
+  async handleFileFunc(){
+    try {
+      let path: string = await environment.getStorageDataDir()
+      let filePath = `${path}/example.txt`;
+      fs.open(filePath, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY)
+        .then((fileDescriptor) => {
+          return fs.write(fileDescriptor, '123');
+        })
+        .then(() => fs.close(fileDescriptor))
+        .catch((e: any) => {
+          console.error('File operation failed:', e);
+        });
+      console.info("getStorageDataDir successfully, Path: " + path);
+    } catch (err) {
+      console.info("getStorageDataDir failed with error message: " + err.message + ", error code: " + err.code);
+    }
+  }
+
   build(){
     Row(){
       Image(this.mainListItem.image)
@@ -83,13 +107,19 @@ struct MainListItemComponent{
       pressed: this.itemPressedStyles
     })
     .onClick(() => {
-        console.info(this.mainListItem.routerUrl)
+      this.handleFileFunc()
     })
   }
 }
 
 @Component
 export default struct FilesHomeComps{
+
+  aboutToAppear() {
+    console.info("aboutToAppear:===")
+    FileManager.requestPermission(getContext(this))
+  }
+
   build(){
     Row() {
       Column() {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,12 +17,12 @@ import hilog from '@ohos.hilog'
 
 class Logger {
   private domain: number
-  private prefix: string = 'Sample_Enterprise'
+  private prefix: string
   private format: string = '%{public}s, %{public}s'
 
   constructor(prefix: string) {
     this.prefix = prefix
-    this.domain = 0x5022
+    this.domain = 0xFF00
   }
 
   debug(...args: any[]) {
@@ -40,14 +40,6 @@ class Logger {
   error(...args: any[]) {
     hilog.error(this.domain, this.prefix, this.format, args)
   }
-
-  isLoggable(...args: any[]) {
-    hilog.isLoggable(this.domain, this.prefix, hilog.LogLevel.INFO)
-  }
 }
 
-export function myparseInt(s: string, n: number) {
-  return parseInt(s, n)
-}
-
-export default new Logger('[samples.enterprise_admin_ext_ability]')
+export default new Logger('Sample_FileManager')
