@@ -3,6 +3,7 @@ import networkManager from '@ohos.enterprise.networkManager';
 import Want from '@ohos.app.ability.Want';
 import adminManager from '@ohos.enterprise.adminManager';
 import AdminComps from '../learning/admin'
+import FilesHomeComps from "../learning/Files/filesHome"
 
 @Entry
 @Component
@@ -72,7 +73,8 @@ struct Index {
       // Web({ src: $rawfile("node/index.html"), controller: this.controller})
       // Web({ src: $rawfile("index.html"), controller: this.controller})
       // BasicComps()
-      AdminComps()
+      // AdminComps()
+      FilesHomeComps()
     }
   }
 }
