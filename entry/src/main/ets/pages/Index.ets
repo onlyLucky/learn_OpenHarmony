@@ -30,13 +30,13 @@ struct Index {
       }
       console.info('Succeeded in enabling admin');
     });
-    /*networkManager.getMac(wantTemp, 'eth0', (err, result) => {
+    networkManager.getMac(wantTemp, 'eth0', (err, result) => {
       if (err) {
         console.error(`Failed to get mac. Code: ${err.code}, message: ${err.message}`);
         return;
       }
       console.info(`Succeeded in getting mac, result : ${result}`);
-    });*/
+    });
     return '123'
   }
 
@@ -73,8 +73,8 @@ struct Index {
       // Web({ src: $rawfile("node/index.html"), controller: this.controller})
       // Web({ src: $rawfile("index.html"), controller: this.controller})
       // BasicComps()
-      // AdminComps()
-      FilesHomeComps()
+      AdminComps()
+      // FilesHomeComps()
     }
   }
 }

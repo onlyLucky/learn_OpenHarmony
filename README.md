@@ -15,7 +15,7 @@
 2. 在应用签名文件中设置应用为系统应用，即app-feature字段为hos_system_app
     - 打开 OpenHarmony SDK 所在目录，可通过工程根路径 local.properties 文件或 DevEco Studio 菜单栏中单击 File > Settings > SDK > OpenHarmony 界面查看 。
     - 在 OpenHarmony SDK 目录下，进入 {Version} > `toolchains` > lib 文件夹，打开 UnsgnedReleasedProfileTemplate.json 文件。
-    - 将 apl 配置项配置为 system_core ，app-feature 配置项配置为 ohos_system_app ， Profile 文件的修改参考[HarmonyAppProvision 配置文件的说明](https://docs.openharmony.cn/pages/v4.0/zh-cn/application-dev/security/app-provision-structure.md/)。
+    - 将 apl 配置项配置为 system_core ，app-feature 配置项配置为 hos_system_app ， Profile 文件的修改参考[HarmonyAppProvision 配置文件的说明](https://docs.openharmony.cn/pages/v4.0/zh-cn/application-dev/security/app-provision-structure.md/)。
     - 重新进行应用签名文件生成 File > Project Structure > signing configs 自动生成应用签名
 3. 创建EnterpriseAdminExtensionAbility，[项目文件参考](./entry/src/main/ets/EnterpriseExtAbility/index.ets), [官方文档](https://docs.openharmony.cn/pages/v4.0/zh-cn/application-dev/application-models/enterprise-extensionAbility.md)
 4. 根据调用api 添加所需要的权限,[参考配置项](./entry/src/main/module.json5) 中的 `requestPermissions` 配置项

@@ -4,13 +4,13 @@
       {
         "name": "default",
         "material": {
-          "certpath": "C:\\Users\\feynman\\.ohos\\config\\openharmony\\auto_ohos_default_HelloWorld_com.example.hw20240410.cer",
-          "storePassword": "0000001BCD24595AE4121F2A5DD78A56B8AE933F61B057E617184A673F46AC4FAF4D117B99FCAA35036D3B",
+          "certpath": "C:\\Users\\feynman\\.ohos\\config\\openharmony\\auto_ohos_default_learn_OpenHarmony_com.example.hw20240410.cer",
+          "storePassword": "0000001B3DE157CF25DD9139B31E87CBAC2B010196429B615250749F5B586DEDE3E079E23AFBCD7E0E8405",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B4F170E3B4F4D98322E76149BDC0ABB26A894CCDB28A42ACC7BA5731E07F59121C70F3CCDA326F6",
-          "profile": "C:\\Users\\feynman\\.ohos\\config\\openharmony\\auto_ohos_default_HelloWorld_com.example.hw20240410.p7b",
+          "keyPassword": "0000001B749582CCE535069FD9C6FA7B2F7E92E72F8ED382D0A327B7EDEDD5E9F57FCF447FC03D69591075",
+          "profile": "C:\\Users\\feynman\\.ohos\\config\\openharmony\\auto_ohos_default_learn_OpenHarmony_com.example.hw20240410.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\feynman\\.ohos\\config\\openharmony\\auto_ohos_default_HelloWorld_com.example.hw20240410.p12"
+          "storeFile": "C:\\Users\\feynman\\.ohos\\config\\openharmony\\auto_ohos_default_learn_OpenHarmony_com.example.hw20240410.p12"
         }
       }
     ],
